@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Tools">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Stopwatch" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+        <group android:checkableBehavior="single">
+            <menu>
+                <item
+                    android:id="@+id/nav_timer"
+                    android:icon="@drawable/ic_access_alarm_black_24dp"
+                    android:title="Stopwatch Timer" />
+                <item
+                    android:id="@+id/nav_tracker"
+                    android:icon="@drawable/ic_directions_run_black_24dp"
+                    android:title="Activity Tracker" />
+                <item
+                    android:id="@+id/nav_counter"
+                    android:icon="@drawable/ic_local_dining_black_24dp"
+                    android:title="Calorie Counter" />
+                <item
+                    android:id="@+id/nav_reports"
+                    android:icon="@drawable/ic_assignment_black_24dp"
+                    android:title="Reports" />
+            </menu>
+        </group></item>
+    <item android:title="Options">
+        <group android:checkableBehavior="single">
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+            <menu>
+                <item
+                    android:id="@+id/nav_account"
+                    android:icon="@drawable/ic_account_box_black_24dp"
+                    android:title="Account" />
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="Settings" />
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_favorite_black_24dp"
+                    android:title="Help" />
+            </menu>
+        </group></item>
+
 
 </menu>

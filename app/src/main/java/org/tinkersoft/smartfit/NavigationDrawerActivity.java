@@ -31,6 +31,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        setTitle("Smart Fit");
     }
 
     @Override
@@ -57,11 +58,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -71,19 +67,21 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-    /*    if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_timer) {
+           // Display Timer Fragment
+        } else if (id == R.id.nav_tracker) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_counter) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_reports) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_account) {
 
-        } else if (id == R.id.nav_send) {
+        }else if (id == R.id.nav_settings) {
 
-        }*/
+        }else if (id == R.id.nav_help) {
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
