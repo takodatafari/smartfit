@@ -92,6 +92,18 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 // Display Timer Fragment
                 fragment = new ReportsFragment();
                 break;
+            case R.id.nav_account:
+                // Display Timer Fragment
+                fragment = new AccountFragment();
+                break;
+            case R.id.nav_settings:
+                // Display Timer Fragment
+                fragment = new SettingsFragment();
+                break;
+            case R.id.nav_help:
+                // Display Timer Fragment
+                fragment = new HelpFragment();
+                break;
         }
 
         //replacing the fragment
