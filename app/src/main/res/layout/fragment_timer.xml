@@ -11,7 +11,7 @@
         android:id="@+id/textView2"/>
 
     <TextView
-        android:text="0"
+        android:text="00:00:00"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/timer_text" />
@@ -19,18 +19,19 @@
     <Button
         android:text="Start"
         android:layout_width="match_parent"
+        android:onClick="startTime"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
+        android:id="@+id/start_button" />
 
     <Button
         android:text="Stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2" />
+        android:id="@+id/stop_button" />
 
     <Button
         android:text="Reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button3" />
+        android:id="@+id/reset_button" />
 </LinearLayout>

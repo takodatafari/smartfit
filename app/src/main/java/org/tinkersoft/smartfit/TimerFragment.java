@@ -39,22 +39,20 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
 
     public void incrementCounter(){
         Log.d("TAG", "Increment Counter has been initiated");
-        TextView text = (TextView) getActivity().findViewById(R.id.timer_text);
-        text.setText("9999");
+       // TextView text = (TextView) getActivity().findViewById(R.id.timer_text);
+       // text.setText("9999");
+
 
 
     }
-
 
     @Override
     public void onClick(View v) {
         //do what you want to do when button is clicked
         switch (v.getId()) {
           //  case R.id.:
-
            //     break;
          //   case R.id.:
-
             //    break;
         }
 

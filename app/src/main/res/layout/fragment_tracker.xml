@@ -3,9 +3,76 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+        <TextView
+            android:text="Squats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/squats_textView" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/squats_editText" />
+
     <TextView
-        android:text="Tracker"
+        android:text="Pushups"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/pushups" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/pushups_editText" />
+
+    <TextView
+        android:text="Laps Run"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/runLaps" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/runLaps_editText" />
+
+    <TextView
+        android:text="Leg Raises"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/legRaises" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/legRaises_editText" />
+    <TextView
+        android:text="Crunches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crunches" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/crunches_editText" />
+    <TextView
+        android:text="Pull Ups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pullUps" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/pullups_editText" />
+
+
 </LinearLayout>

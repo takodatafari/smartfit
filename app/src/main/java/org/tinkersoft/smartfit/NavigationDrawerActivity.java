@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -96,8 +97,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             case R.id.nav_timer:
                 // Display Timer Fragment
                 timefrag = new TimerFragment();
-                timefrag.incrementCounter();
+               // timefrag.incrementCounter();
                 fragment = timefrag;
+                //TextView text = (TextView)findViewById(R.id.timer_text);
+               //text.setText("pop");
+               // fragment = new TimerFragment();
 
                 break;
             case R.id.nav_tracker:
@@ -179,5 +183,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
+    }
+
+
+    public void startTime(View view){
+        Log.d("TAG","Timer has been started");
     }
 }

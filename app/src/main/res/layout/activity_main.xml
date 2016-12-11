@@ -14,5 +14,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:onClick="sendMessage" />
+        android:onClick="sendMessage"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="120dp"
+         android:id="@+id/go_button" />
+
+     <TextView
+         android:text="TextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/welcome_text"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="143dp" />
+
+     <Button
+         android:text="Start Timer"
+         android:onClick="startTimer"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/go_button"
+         android:layout_alignRight="@+id/go_button"
+         android:layout_alignEnd="@+id/go_button"
+         android:layout_marginBottom="29dp"
+         android:id="@+id/start_button" />
+
+
 </RelativeLayout>
