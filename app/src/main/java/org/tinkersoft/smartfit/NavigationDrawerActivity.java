@@ -143,14 +143,38 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     private int seconds;
     private String t = "t=";
-
+    private Timer timer;
     public void startTime(View view){
         //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.);
         Log.d("TAG","Timer has been started");
         seconds+=1;
         timefrag.setTextView(t+seconds);
+        timer.start();
+        timer.stop();
+
+    }
 
 
+
+    private class Timer implements Runnable{
+        private boolean running = true;
+
+        public void stop(){
+            running=false;
+        }
+
+        public void start(){
+            running = true;
+            if (running){
+                (new Thread(new Timer())).start();
+            }
+            //while
+        }
+
+        @Override
+        public void run() {
+            Log.d("TAG","Running");
+        }
     }
 
     /**
