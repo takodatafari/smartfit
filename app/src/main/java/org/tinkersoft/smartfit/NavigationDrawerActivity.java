@@ -2,8 +2,6 @@ package org.tinkersoft.smartfit;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -16,14 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
-
-import static android.R.attr.fragment;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -141,39 +136,51 @@ public class NavigationDrawerActivity extends AppCompatActivity
     }
 
 
-    private int seconds;
+    private int seconds = 0;
     private String t = "t=";
     private Timer timer;
-    public void startTime(View view){
-        //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.);
+    public void startTimer(View view){
         Log.d("TAG","Timer has been started");
-        seconds+=1;
-        timefrag.setTextView(t+seconds);
+        timer = new Timer();
         timer.start();
-        timer.stop();
-
+        //seconds+=1;
+        //timefrag.setTextView(t+seconds);
     }
 
+    public void stopTimer(View view){
+        Log.d("TAG","Timer has been stopped");
+        timer.stopRunning();
+    }
 
+    private class Timer extends Thread{
+        private boolean running = false;
 
-    private class Timer implements Runnable{
-        private boolean running = true;
+        public boolean isRunning(){
+            return running;
+        }
 
-        public void stop(){
+        public void stopRunning(){
             running=false;
         }
 
-        public void start(){
+        public void startRunning(){
             running = true;
-            if (running){
-                (new Thread(new Timer())).start();
-            }
-            //while
         }
 
         @Override
         public void run() {
-            Log.d("TAG","Running");
+            Log.d("TAG","Timer thread is Running");
+            startRunning();
+            if (running){
+                //do something
+                Log.d("TAG","Timer if statement is true");
+            }
+            while (running){
+                Log.d("TAG","Timer is looping");
+                //seconds++;
+                //timefrag.setTextView(t+seconds);
+
+            }
         }
     }
 
