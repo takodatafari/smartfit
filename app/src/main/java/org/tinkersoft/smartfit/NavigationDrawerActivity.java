@@ -139,16 +139,15 @@ public class NavigationDrawerActivity extends AppCompatActivity
     private int seconds = 0;
     private String t = "t=";
     private Timer timer;
+
     public void startTimer(View view){
-        Log.d("TAG","Timer has been started");
+        Log.d("TAG","startTimer has been called");
         timer = new Timer();
         timer.start();
-        //seconds+=1;
-        //timefrag.setTextView(t+seconds);
     }
 
     public void stopTimer(View view){
-        Log.d("TAG","Timer has been stopped");
+        Log.d("TAG","stopTimer has been called");
         timer.stopRunning();
     }
 
@@ -171,14 +170,21 @@ public class NavigationDrawerActivity extends AppCompatActivity
         public void run() {
             Log.d("TAG","Timer thread is Running");
             startRunning();
-            if (running){
-                //do something
-                Log.d("TAG","Timer if statement is true");
-            }
             while (running){
                 Log.d("TAG","Timer is looping");
-                //seconds++;
-                //timefrag.setTextView(t+seconds);
+                try {
+                    sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                seconds++;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        timefrag.setTextView(t+seconds);
+
+                    }
+                });
 
             }
         }
