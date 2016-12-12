@@ -20,19 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("TAG", "onCreate() has been initiated");
-        text = (TextView)findViewById(R.id.welcome_text);
-        text.setText("00:00:00");
-
-        for(int i = 0; i<=10;i++){
-            //text.setText("count:"+i);
-        }
-
     }
 
-    public void startTimer(View view){
-        seconds+=1;
-        text.setText("t="+seconds);
-    }
 
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {

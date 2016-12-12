@@ -82,6 +82,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    private Fragment fragment;
+    private TimerFragment timefrag;
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -89,20 +92,15 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //creating fragment object
-        Fragment fragment = null;
-        TimerFragment timefrag = null;
+        fragment = null;
+        timefrag = null;
 
         //initializing the fragment object which is selected
         switch (id) {
             case R.id.nav_timer:
                 // Display Timer Fragment
                 timefrag = new TimerFragment();
-               // timefrag.incrementCounter();
                 fragment = timefrag;
-                //TextView text = (TextView)findViewById(R.id.timer_text);
-               //text.setText("pop");
-               // fragment = new TimerFragment();
-
                 break;
             case R.id.nav_tracker:
                 // Display Timer Fragment
@@ -137,16 +135,22 @@ public class NavigationDrawerActivity extends AppCompatActivity
             ft.commit();
         }
 
-/*
-        R.id.nav_counter
-        R.id.nav_reports
-        R.id.nav_account
-        R.id.nav_settings
-        R.id.nav_help
-*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    private int seconds;
+    private String t = "t=";
+
+    public void startTime(View view){
+        //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.);
+        Log.d("TAG","Timer has been started");
+        seconds+=1;
+        timefrag.setTextView(t+seconds);
+
+
     }
 
     /**
@@ -183,10 +187,5 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
-    }
-
-
-    public void startTime(View view){
-        Log.d("TAG","Timer has been started");
     }
 }

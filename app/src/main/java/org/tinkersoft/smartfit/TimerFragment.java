@@ -17,6 +17,9 @@ import org.w3c.dom.Text;
 
 public class TimerFragment extends Fragment implements View.OnClickListener {
 
+
+    TextView textView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,10 +44,13 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
         Log.d("TAG", "Increment Counter has been initiated");
        // TextView text = (TextView) getActivity().findViewById(R.id.timer_text);
        // text.setText("9999");
-
-
-
     }
+
+    public void setTextView(String time){
+        textView = (TextView)getView().findViewById(R.id.timer_text);
+        textView.setText(time);
+    }
+
 
     @Override
     public void onClick(View v) {
