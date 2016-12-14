@@ -34,5 +34,6 @@
         android:text="Reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="resetTimer"
         android:id="@+id/reset_button" />
 </LinearLayout>

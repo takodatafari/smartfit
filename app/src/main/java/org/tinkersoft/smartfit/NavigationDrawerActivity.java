@@ -29,6 +29,22 @@ public class NavigationDrawerActivity extends AppCompatActivity
      */
     private GoogleApiClient client;
 
+    //Private Fields
+    long starttime = 0L;
+    long timeInMilliseconds = 0L;
+    long timeSwapBuff = 0L;
+    long updatedtime = 0L;
+    int time = 1;
+    int secs = 0;
+    int mins = 0;
+    int milliseconds = 0;
+
+    private Fragment fragment;
+    private TimerFragment timefrag;
+    private int seconds = 0;
+    private String t = "t=";
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,9 +92,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
-    private Fragment fragment;
-    private TimerFragment timefrag;
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -135,11 +148,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         return true;
     }
 
-
-    private int seconds = 0;
-    private String t = "t=";
-    private Timer timer;
-
     public void startTimer(View view){
         Log.d("TAG","startTimer has been called");
         timer = new Timer();
@@ -149,6 +157,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
     public void stopTimer(View view){
         Log.d("TAG","stopTimer has been called");
         timer.stopRunning();
+    }
+
+    public void resetTimer(View view){
+        Log.d("TAG","resetTimer has been called");
+        timer.reset();
     }
 
     private class Timer extends Thread{
@@ -187,6 +200,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 });
 
             }
+        }
+
+        public void reset() {
+            running=false;
+            seconds=0;
         }
     }
 
